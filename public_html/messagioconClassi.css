@@ -1,0 +1,192 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17-feb-2019, 18.17.59
+    Author     : Mirella
+*/
+input:focus,
+textarea:focus{
+    /*toglie il bordo della casella di testo quando ottiene il focus*/
+    outline: none;
+    background-color: magenta;
+    color: white;
+    font-weight: bold;
+}
+
+input:hover,
+textarea:hover{
+    border: dotted 1px red;
+}
+
+/*utilizzando la pseudo-classe placeholder, non gestita da vecchi browser
+si indica utilizzando i doppi due punti ::*/
+input::placeholder{
+    color: darkgray;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+/*posso trasformare un oggetto in linea in un oggetto di tipo blocco e
+quindi gli posso dare una dimensione, cosa che non è permessa con gli oggetti in linea*/
+label{
+    display: inline-block;
+    width: 100px;
+    cursor: pointer;
+    margin-right: 50px;
+    text-transform: capitalize;
+}
+
+/*indicando in questo modo posso indicare che qualunque div contenuto nel form
+viene spaziato del margine indicato*/
+form div{
+    margin: 10px;
+}
+
+/*prende tutti i campi di tipo input con type password*/
+input[type="password"]{
+    background-color: green;
+}
+
+/*1em è una forma di proporzionare con il font corrente*/
+input[type="checkbox"],
+input[type="radio"]{
+    width: 1em;
+}
+
+input[type="checkbox"]{
+    outline: 1px;
+}
+
+select option{
+    font-style: italic;
+    color: red;
+    text-transform: capitalize;
+    background-color: blue;
+}
+select{
+    color: black;
+    background-color: yellow;
+}
+per selezionare i dispari
+select option:nth-child(odd){
+    background-color: aqua;
+}
+
+select option[selected]{
+    background-color: red;
+    color: white;
+}
+
+/*definisco delle dimensioni (250px e 3 righe) tutto quello che non ci sta
+dentro viene chiamato overflow*/
+textarea{
+    width: 250px;
+    /*3 righe di testo*/
+    height: 3em;
+    padding: 5px;
+    border-radius: 10px;
+    border: solid 1px blue;
+    overflow: auto;
+    /*mi considera gli spazi e non va automaticamente a capo (solo quando premo invio)*/
+    white-space: pre;
+        
+}
+textarea:focus{
+    outline: none;
+}
+
+/*per ogni DIV, al secondo oggetto viene applicata la regola*/
+/*div *:nth-child(2){
+    opacity: .2;
+}
+mettendo il + dopo hover seleziona il fratello
+div *:nth-child(1):hover + * {
+    opacity: 1;
+}*/
+
+input[type="text"]{
+    width: 200px;
+    color: red;
+    height: 20px;
+    font-size: 16px;
+    padding: 5px 10px;
+    border: solid 1px blue;
+    border-radius: 10px;
+    background-color: yellow;
+    text-transform: uppercase;
+}
+
+/* */
+.sfondo{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    /* utilizzando la rgba(dove a è il canale alfa, con i valori che vanno
+    da 0, cioè trasparente a 1 cioè opaco) */
+    background-color: rgba(255, 0, 0, 0.3);
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.messaggio{
+    position: absolute;
+    border: solid 1px black;
+    background-color: red;
+    color: white;
+    border-radius: 30px;
+    
+    /* dimensioni del div */
+    width: 300px;
+    height: 200px;
+    
+    /* con le 4 linee seguenti posiziono il div al centro del div contenitore
+    in particolare gli dico di posizionare (LEFT e TOP) al centro del contenitore
+    poi con i MARGIN (-LEFT e -TOP) lo sposto della metà della dimensione (WIDTH e HEIGHT) del
+    div messaggio, così sistemo il div messaggio */
+    left:50%;
+    top:50%;
+    margin-left: -150px;
+    margin-top: -100px;
+    
+    
+}
+.testo{
+    /* con le due proprietà seguenti metto il testo centrato
+    nel DIV, in particolare la seconda riesco a fare mettendo
+    i pixel uguali al valore della proprietà HEIGHT del div 
+    e posso fare questo SOLO se il testo è in linea */
+    text-align: center;
+}
+.titolo{
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: 95%;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.pOk{
+    position: absolute;
+    
+    width:100px;
+    height: 30px;
+    
+    bottom: 25%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -15px;
+}
+
+.pShow{
+    width:100px;
+    height: 30px;
+}

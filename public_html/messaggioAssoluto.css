@@ -1,0 +1,31 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17-feb-2019, 18.01.41
+    Author     : Mirella
+*/
+input:focus,
+textarea:focus{
+    /*toglie il bordo della casella di testo quando ottiene il focus*/
+    outline: none;
+    background-color: magenta;
+    color: white;
+    font-weight: bold;
+}
+
+input:hover,
+textarea:hover{
+    border: dotted 1px red;
+}
+
+/*utilizzando la pseudo-classe placeholder, non gestita da vecchi browser
+si indica utilizzando i doppi due punti ::*/
+input::placeholder{
+    color: darkgray;
+    font-weight: normal;
+    font-size: 16px;
+}
+

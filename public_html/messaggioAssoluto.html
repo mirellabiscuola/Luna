@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Messaggio al centro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="messaggioAssoluto.css" rel="stylesheet" type="text/css"/>    
+    </head>
+    <body>
+        <!--per mettere insieme a livello logico tutti i campi di uno stesso form-->
+        <!--metodi possibili get o post(non vedo i dati passati)-->
+        <!--in action metto la pagina di destinazione a cui invio i dati-->
+        <form method="get" action="paginaDestinazione.html">
+
+            <div>
+                <!--è un tag semantico, indicando a cosa si riferisce-->
+                <!--per legare la label all'oggetto uso l'attributo for, indicando-->
+                <!--tra apici l'id dell'oggetto collegato-->
+                <label for="cognome">cognome:</label>
+                <input type="text"
+                       name="cognome" id="cognome"
+                       value="marchisio"
+                       placeholder="scrivi il tuo cognome"
+                       />
+            </div>
+
+
+            <div>
+                <!--a run-time, ad esempio con una colonna di testo, basta cliccare--> 
+                <!--sulla label che il focus viene messo sulla casella-->
+                <label for="nome">nome:</label>
+                <!--con l'attributo disabled si indica graficamente che non--> 
+                <!--ci può essere niente da indicare-->
+                <input type="text"
+                       name="nome" id="nome"
+                       value="alessandro"
+                       placeholder="scrivi il tuo nome"
+                       disabled="disabled"
+                       />
+            </div>
+
+            <div>
+                <label for="pw">password</label>
+                <input type="password"
+                       name="pw" id="pw"
+                       placeholder="scrivi password"
+                       maxlength="6"
+                       />
+            </div>
+
+            <div>
+                <label for="nuoto">nuoto</label>
+                <input type="checkbox"
+                       name="nuoto" id="nuoto"
+                       value="sport1"
+                       title="nuoto">
+            </div>
+            <div>
+                <label for="tennis">tennis</label>
+                <input type="checkbox"
+                       name="tennis" id="tennis"
+                       value="sport2"
+                       title="tennis">
+            </div>
+            <div>
+                <label for="judo">judo</label>
+                <!--se trova l'attributo checked appare già spuntato-->
+                <input type="checkbox"
+                       name="judo" id="judo"
+                       value="sport3"
+                       title="judo"
+                       checked="checked"
+                       disabled="disabled">
+            </div>
+
+            <div>
+                <label for="sesso_m">maschio</label>
+                <input type="radio"
+                       name="sesso" id="sesso_m"
+                       value="m"
+                       title="maschio"
+                       checked="checked">
+
+            </div>
+            <div>
+                <label for="sesso_f">femmina</label>
+                <input type="radio"
+                       name="sesso" id="sesso_f"
+                       value="f"
+                       title="femmina">
+
+            </div>
+
+            <div>
+                <!--ComboBox-->
+                <label for="sede">sede</label>
+                <select id="sede" name="sede">
+                    <optgroup label="Piemonte">
+                        <option value="sede1">Torino</option>
+                        <option value="sede2">Cuneo</option>
+                        <option value="sede3" selected="selected">Vercelli</option>
+                        <option value="sede4" >Novara</option>
+                    </optgroup>
+                    <optgroup label="Lombardia">
+                        <option value="sede10">Milano</option>
+                        <option value="sede11">Bergamo</option>
+                        <option value="sede12">Brescia</option>
+
+                    </optgroup>
+
+                </select>
+            </div>
+
+            <div>
+                <label for="note">note</label>
+                <!--la textarea non ha attributo value, quindi se voglio mettere del default-->
+                <!--scrivo rta i tag-->
+                <textarea id="note" name="note"
+                          placeholder="inserisci note"
+                          >
+                    Tutto bene
+                    seconda ria
+                    terza riga
+                </textarea>
+
+            </div>
+
+            <div>
+                <!--ComboBox-->
+                <label for="sedi">sede</label>
+                <select id="sedi" name="sedi" multiple="multiple" size="10">
+                    <optgroup label="Piemonte">
+                        <option value="sede1">Torino</option>
+                        <option value="sede2">Cuneo</option>
+                        <option value="sede3" selected="selected">Vercelli</option>
+                        <option value="sede4" >Novara</option>
+                    </optgroup>
+                    <optgroup label="Lombardia">
+                        <option value="sede10">Milano</option>
+                        <option value="sede11">Bergamo</option>
+                        <option value="sede12">Brescia</option>
+
+                    </optgroup>
+
+                </select>
+            </div>
+            <div>
+                <input type="button" id="pInvia" name="pInvia" value="inviare dati (button)"/>
+            </div>
+            <div>
+                <!--il comportamento del type reset è quello di riportare ai valori iniziali gli oggetti dentro il form-->
+                <input type="reset" id="pReset" name="pReset" value="Ritorna dati iniziali"/>
+            </div>
+            <div>
+                <!--il comportamento del type reset è quello di riportare ai valori iniziali gli oggetti dentro il form-->
+                <input type="submit" id="pSubmit" name="pSubmit" value="INVIO!!"/>
+            </div>
+
+            <button type="button">
+                Clicca<br/>
+                qui!!!<br/>
+                :-)<br/>
+                BUTTON
+            </button>
+            <button type="submit">
+                Clicca<br/>
+                qui!!!<br/>
+                :-)<br/>
+                SUBMIT
+            </button>
+            <button type="reset">
+                Clicca<br/>
+                qui!!!<br/>
+                :-)<br/>
+                RESET
+            </button>
+
+            <input type="image" src="imm9.jpeg" id="pImmagine" name="pImmagine" alt='prova'/>
+        </form>
+        
+        <form>
+            <input type="image" src="imm9.jpeg" id="pImmagine2" name="pImmagine2" alt='prova'/>
+        </form>
+        <hr>
+        
+        <!--funziona SOLO se c'è un campo input, e battendo invio funziona come un submit-->
+        <form action="paginaDestinazione.html">
+            Ricerca:
+            <input type="text" name="ricerca" id="ricerca" placeholder="scrivi..."/>
+        </form>
+        
+        <form>
+            <label for="iColor">es. Color</label>
+            <input type='color' id="iColor" name="iColor" value=""/>
+            
+            <!--nelle date in quelle che restituisce il formato è aaaa-mm-gg-->
+            <label for="iDate">es. Date</label>
+            <input type='date' id="iDate" name="iDate" value=""/>
+            
+            <!--posso definire un minimo e un massimo e lo step-->
+            <label for="iRange">es. Range</label>
+            <input type='range' id="iRange" name="iRange" min="1" max="10" step="1" value="10"/>
+            
+            <button type="submit">INVIA</button>
+            
+            <!--nelle date in quelle che restituisce il formato è aaaa-mm-gg-->
+            <label for="iNumber">es. Numeri</label>
+            <input type='number' id="iNumber" name="iNumber" value=""/>
+            
+            <label for="iSearch">es. Search</label>
+            <input type='search' id="iSearch" name="iSearch" value=""/>
+        </form>
+        <div id="sfondo">
+            <div id="messaggio">TESTO DEL MESSAGGIO </div>
+        </div>
+
+    </body>
+</html>
